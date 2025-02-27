@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: mailapp
+  datasource:
+    url: jdbc:mysql://localhost:3306/mailapp
+    username: root
+    password: admin
+  mail:
+    host: localhost
+    port: 1025
+    properties:
+      mail:
+        smtp:
+          auth: true
+    username: someUser
+    password: blahblah
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        hbm2ddl:
+          import_files_sql_extractor: org.hibernate.tool.schema.internal.script.MultiLineSqlScriptExtractor
