@@ -15,7 +15,7 @@ public class MailService {
 
     public void sendConfirmationEmail(User user) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("noreply@mojaaplikacja.pl");
+        message.setFrom("slawekwch@gmail.com");
         message.setTo(user.getEmail());
         message.setSubject("Potwierdź rejestrację");
         String url = "http://localhost:8080/confirm?token=" + user.getToken();
@@ -33,7 +33,7 @@ public class MailService {
 
     public void sendPasswordResetLink(User user) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("noreply@mojaaplikacja.pl");
+        message.setFrom("slawekwch@gmail.com");
         message.setTo(user.getEmail());
         message.setSubject("Resetowanie hasła");
         String url = "http://localhost:8080/password-reset-form?token=" + user.getToken();

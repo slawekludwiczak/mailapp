@@ -6,14 +6,17 @@ spring:
     username: root
     password: admin
   mail:
-    host: localhost
-    port: 1025
+    host: smtp.gmail.com
+    port: 587
     properties:
       mail:
+        debug: true
         smtp:
+          starttls:
+            enable: true
           auth: true
-    username: someUser
-    password: blahblah
+    username: <twojmail@gmail.com>
+    password: <hasło wygenerowane na https://myaccount.google.com/apppasswords>
   jpa:
     hibernate:
       ddl-auto: create
@@ -21,3 +24,7 @@ spring:
       hibernate:
         hbm2ddl:
           import_files_sql_extractor: org.hibernate.tool.schema.internal.script.MultiLineSqlScriptExtractor
+logging:
+  level:
+    org.springframework.mail: DEBUG
+    org.springframework.mail.javamail: DEBUG
